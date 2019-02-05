@@ -1,0 +1,146 @@
+.clearfix { @include clearfix; }
+.center-block { @include center-block; }
+.pull-right { float: right !important; }
+.pull-left { float: left !important; }
+
+.hide, .hidden { display: none !important; }
+.show { display: block !important; }
+.invisible { visibility: hidden; }
+
+.text-hide { @include text-hide; }
+.text-overflow { @include text-overflow(); }
+.text-center { text-align: center; }
+
+.img-responsive { @include img-responsive; }
+
+.list-unstyled { @include list-unstyled; }
+
+.list-inline {
+    @include list-unstyled;
+
+    margin-left: -5px;
+
+    > li {
+        display: inline-block;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+.embed-responsive {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+
+    .embed-responsive-item, iframe, embed, object, video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        border: 0;
+    }
+}
+
+.embed-responsive-16by9 { padding-bottom: 56.25%; }
+.embed-responsive-4by3 { padding-bottom: 75%; }
+
+.table {
+    width: 100%;
+    max-width: 100%;
+
+    > thead, > tbody, > tfoot {
+        > tr {
+            > th, > td {
+                padding: 8px;
+                line-height: $line-height;
+                vertical-align: top;
+                border-top: 1px solid #DDD;
+            }
+        }
+    }
+
+    > thead > tr > th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #DDD;
+    }
+
+    > thead:first-child {
+        > tr:first-child {
+            > th, > td { border-top: 0; }
+        }
+    }
+}
+
+.table-bordered {
+    border: 1px solid #DDD;
+
+    > thead, > tbody, > tfoot {
+        > tr {
+            > th, > td { border: 1px solid #DDD; }
+        }
+    }
+
+    > thead > tr {
+        > th, > td { border-bottom-width: 2px; }
+    }
+}
+
+.table-striped {
+    > tbody > tr:nth-of-type(odd) { background-color: #F9F9F9; }
+}
+
+.table-hover {
+    > tbody > tr:hover { background-color: #F5F5F5; }
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity 300ms linear;
+
+    &.in { opacity: 1; }
+}
+
+.collapse {
+    display: none;
+
+    &.in { display: block; }
+}
+
+.collapsing {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    transition: height 500ms ease-in-out, visibility 500ms ease;
+}
+
+.no-gap {
+    @include media('<phone') {
+        padding-right: 0;
+        padding-left: 0;
+
+        & > .row {
+            margin-right: 0;
+            margin-left: 0;
+
+            & > div[class^='col-'] {
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.flex-row {
+    @include media('>=phone') {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .safari & {
+        &:before, &:after { display: none; }
+    }
+}

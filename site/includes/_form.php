@@ -16,7 +16,7 @@
       <div class="form-item">
         <label for="password">
           <span class="sr-only">PASSWORD</span>
-          <input type="text" data-validate="type-required" class="input-text" id="password" name="txtPassword" placeholder="PASSWORD" />
+          <input type="password" data-validate="type-required" class="input-text" id="password" name="txtPassword" placeholder="PASSWORD" />
           <span class="msg-hidden"></span>
         </label>
       </div>

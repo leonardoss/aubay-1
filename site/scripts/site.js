@@ -36,7 +36,7 @@ window.Aubay = window.Aubay || {};
 
                     e.preventDefault();
 
-                    if (rule == 'type-text') {
+                    if (rule == 'type-required') {
                         if (!Form.ValidateRequired(currentVal)){
                             formItem.className = 'error';
                             msgField.innerHTML = 'Please, fill the field';

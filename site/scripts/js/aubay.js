@@ -7,7 +7,7 @@ window.Aubay = window.Aubay || {};
         arrayInput = form.querySelectorAll('[data-validate]'),
 
     Form = { 
-        Validate: function() {
+        CleanFields: function() {
             Array.from(arrayInput).forEach(function(elem) {
                 elem.addEventListener('keypress', (event) => {
                     var formItem = elem.closest('label'),
@@ -17,11 +17,16 @@ window.Aubay = window.Aubay || {};
                     msgField.innerHTML = '';
                 });
             });
+        },
+        Validate: function() {
+            Form.CleanFields();
 
             form.addEventListener('submit', function(e){
                 var i = 0,
                 isValid = true,
-                msgReturn = document.getElementById('return-general');
+                msgReturn = document.getElementById('return-general'),
+                name = e.target.elements['txtUsername'].value,
+                password = e.target.elements['txtPassword'].value;
 
                 while (i < arrayInput.length) {
                     var rule = arrayInput[i].getAttribute('data-validate'),
@@ -29,27 +34,22 @@ window.Aubay = window.Aubay || {};
                     msgField = arrayInput[i].nextSibling.nextSibling,
                     currentVal = arrayInput[i].value;
 
-                    if (rule == 'type-text') {
+                    e.preventDefault();
+
+                    if (rule == 'type-required') {
                         if (!Form.ValidateRequired(currentVal)){
                             formItem.className = 'error';
                             msgField.innerHTML = 'Please, fill the field';
                             isValid = false;
                         }
                     }
-
                     i++;
                 }
 
-                e.preventDefault();
-
                 if (isValid) {
-                    var name = form.elements['txtUsername'].value,
-                    password = form.elements['txtPassword'].value;
-
                     if (name === 'admin' && password === 'admin') {
                         window.location.href = 'https://gauchazh.clicrbs.com.br/';
                     } else {
-                        
                         msgReturn.innerHTML = 'Invalid credentials';
                     }
                 }
@@ -64,7 +64,6 @@ window.Aubay = window.Aubay || {};
     Aubay.app = function () {
         return {
             Init: function () {
-                console.log('init js');
                 Form.Validate()
             }
         };

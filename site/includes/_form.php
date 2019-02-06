@@ -9,14 +9,14 @@
       <div class="form-item">
         <label for="username">
           <span class="sr-only">USERNAME</span>
-          <input type="text" data-validate="type-text" class="input-text" id="username" name="txtUsername" placeholder="USERNAME" />
+          <input type="text" data-validate="type-required" class="input-text" id="username" name="txtUsername" placeholder="USERNAME" />
           <span class="msg-hidden"></span>
         </label>
       </div>
       <div class="form-item">
         <label for="password">
           <span class="sr-only">PASSWORD</span>
-          <input type="text" data-validate="type-text" class="input-text" id="password" name="txtPassword" placeholder="PASSWORD" />
+          <input type="text" data-validate="type-required" class="input-text" id="password" name="txtPassword" placeholder="PASSWORD" />
           <span class="msg-hidden"></span>
         </label>
       </div>

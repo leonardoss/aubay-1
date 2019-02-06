@@ -2,8 +2,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SantoPixe Boilerplate</title>
-      <meta name="author" content="SantoPixe Boilerplate">
+    <title>Aubay - Frontend Technical test to Aubay</title>
+      <meta name="author" content="Aubay - Frontend Technical test to Aubay">
 
     <link rel="stylesheet" href="../styles/styles.css">
 

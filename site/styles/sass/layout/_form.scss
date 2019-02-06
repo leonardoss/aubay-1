@@ -4,8 +4,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
-    max-width: 90%;
-    width: 100%;
+    max-width: 450px;
+    width: 90%;
     fieldset {
         padding: 14px 20px;
     }
@@ -30,7 +30,7 @@
             font-weight: 700;
         }
     }
-    @media (min-width: $screen-md-min) { 
-        max-width: 450px;
+    @media (min-width: $screen-sm-min) { 
+        //
     }
 }

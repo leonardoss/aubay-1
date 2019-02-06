@@ -1,0 +1,36 @@
+.login-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    max-width: 90%;
+    width: 100%;
+    fieldset {
+        padding: 14px 20px;
+    }
+    header {
+        background-color: $secondary-color;
+        padding: 20px;
+        .title {
+            font-size: 18px;
+            margin: 0 0 8px 0;
+        }
+    }
+    section {
+        background-color: rgba($secondary-color, 0.6);
+    }
+    .form-item {
+        margin: 0 0 24px 0;
+    }
+    .extra {
+        font-size: 12px;
+        text-align: center;
+        a {
+            font-weight: 700;
+        }
+    }
+    @media (min-width: $screen-md-min) { 
+        max-width: 450px;
+    }
+}
